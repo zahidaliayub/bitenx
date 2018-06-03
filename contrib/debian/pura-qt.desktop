@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BitenX
+Comment=BitenX P2P Cryptocurrency
+Comment[fr]=BitenX, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=BitenX, eşten eşe kriptografik sanal para birimi
+Exec=bitenx-qt %u
+Terminal=false
+Type=Application
+Icon=bitenx128
+MimeType=x-scheme-handler/bitenx;
+Categories=Office;Finance;

@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[bitenx.qt-translation-010]
+file_filter = src/qt/locale/bitenx_<lang>.ts
+source_file = src/qt/locale/bitenx_en.ts
+source_lang = en

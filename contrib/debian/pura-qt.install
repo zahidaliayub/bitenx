@@ -1,0 +1,6 @@
+usr/local/bin/bitenx-qt usr/bin
+share/pixmaps/bitenx32.xpm usr/share/pixmaps
+share/pixmaps/bitenx16.xpm usr/share/pixmaps
+share/pixmaps/bitenx128.png usr/share/pixmaps
+debian/bitenx-qt.desktop usr/share/applications
+debian/bitenx-qt.protocol usr/share/kde4/services/

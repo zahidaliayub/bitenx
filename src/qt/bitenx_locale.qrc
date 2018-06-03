@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/bitenx_bg.qm</file>
+        <file alias="de">locale/bitenx_de.qm</file>
+        <file alias="en">locale/bitenx_en.qm</file>
+        <file alias="es">locale/bitenx_es.qm</file>
+        <file alias="fi">locale/bitenx_fi.qm</file>
+        <file alias="fr">locale/bitenx_fr.qm</file>
+        <file alias="it">locale/bitenx_it.qm</file>
+        <file alias="ja">locale/bitenx_ja.qm</file>
+        <file alias="pl">locale/bitenx_pl.qm</file>
+        <file alias="pt">locale/bitenx_pt.qm</file>
+        <file alias="ru">locale/bitenx_ru.qm</file>
+        <file alias="sk">locale/bitenx_sk.qm</file>
+        <file alias="sv">locale/bitenx_sv.qm</file>
+        <file alias="vi">locale/bitenx_vi.qm</file>
+        <file alias="zh_CN">locale/bitenx_zh_CN.qm</file>
+        <file alias="zh_TW">locale/bitenx_zh_TW.qm</file>
+    </qresource>
+</RCC>

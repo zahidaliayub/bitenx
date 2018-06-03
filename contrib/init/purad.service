@@ -1,0 +1,22 @@
+[Unit]
+Description=BitenX's distributed currency daemon
+After=network.target
+
+[Service]
+User=bitenx
+Group=bitenx
+
+Type=forking
+PIDFile=/var/lib/bitenxd/bitenxd.pid
+ExecStart=/usr/bin/bitenxd -daemon -pid=/var/lib/bitenxd/bitenxd.pid \
+-conf=/etc/bitenx/bitenx.conf -datadir=/var/lib/bitenxd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
