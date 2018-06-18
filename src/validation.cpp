@@ -1241,17 +1241,25 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
-    if (nPrevHeight == 0) {
-        return 1700000 * COIN;
+   double dDiff;
+    CAmount nSubsidyBase;
+
+    if (nPrevHeight < 1 && Params().NetworkIDString() == CBaseChainParams::MAIN) {
+        /* a bug which caused diff to not be correctly calculated */
+        dDiff = (double)0x0000ffff / (double)(nPrevBits & 0x00ffffff);
+    } else {
+        dDiff = ConvertBitsToDouble(nPrevBits);
     }
 
-    CAmount nSubsidy = 10 * COIN;
+    if (nPrevHeight < 2) {
+        nSubsidyBase = 1700000;
+    } else {
+	nSubsidyBase = 10;
+    }
 
-
-
-    // yearly decline of production by ~0% per year, projected ~0M coins max by year X+.
+    // yearly decline of production by ~15% per year, projected ~0M coins max by year X+.
    for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy*0.15;
+        nSubsidy = nSubsidy*0.15;
     }
 
     // Hard fork to reduce the block reward by 0 extra percent (allowing budget/superblocks)
@@ -1262,7 +1270,9 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    return blockValue*0.5;
+    CAmount ret = blockValue*0.5; // 50%
+
+    return ret;
 }
 
 bool IsInitialBlockDownload()
